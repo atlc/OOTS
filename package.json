@@ -1,12 +1,12 @@
 {
-  "name": "typescript-boilerplate",
+  "name": "OOTS",
   "version": "1.0.0",
-  "description": "Covalence TS boilerplate",
+  "description": "Covalence",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build" : "tsc",
-    "dev": "tsc -w **/*.ts"
+    "dev": "tsc -w **/*.ts --outDir build"
   },
   "keywords": [],
   "author": "",
