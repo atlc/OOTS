@@ -20,6 +20,36 @@ var __extends = (this && this.__extends) || (function () {
 // let friend03:IFriend = {name: "Shay", sayHello: name};
 // let friend04:IFriend = {name: "Jessi", sayHello: name};
 // let friend05:IFriend = {name: "Uri", sayHello: name};
+var OPerson1 = {
+    name: 'Melissa',
+    sayHello: function () { }
+};
+OPerson1.sayHello = function () { console.log("Hello! My name is " + this.name); };
+OPerson1.sayHello();
+var OPerson2 = {
+    name: 'Zach',
+    sayHello: function () { }
+};
+OPerson2.sayHello = function () { console.log("Hello! My name is " + this.name); };
+OPerson2.sayHello();
+var OPerson3 = {
+    name: 'Shay',
+    sayHello: function () { }
+};
+OPerson3.sayHello = function () { console.log("Hello! My name is " + this.name); };
+OPerson3.sayHello();
+var OPerson4 = {
+    name: 'Jessi',
+    sayHello: function () { }
+};
+OPerson4.sayHello = function () { console.log("Hello! My name is " + this.name); };
+OPerson4.sayHello();
+var OPerson5 = {
+    name: 'Uri',
+    sayHello: function () { }
+};
+OPerson5.sayHello = function () { console.log("Hello! My name is " + this.name); };
+OPerson5.sayHello();
 var Person = /** @class */ (function () {
     function Person(n, c, a) {
         this.name = n;
@@ -27,7 +57,7 @@ var Person = /** @class */ (function () {
         this.age = a;
     }
     Person.prototype.sayHello = function () {
-        return this.name + " is " + this.age + " years old and currently resides in " + this.city + ".x";
+        return this.name + " is " + this.age + " years old and currently resides in " + this.city + ".";
     };
     return Person;
 }());

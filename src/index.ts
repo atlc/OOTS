@@ -9,6 +9,45 @@
 // let friend04:IFriend = {name: "Jessi", sayHello: name};
 // let friend05:IFriend = {name: "Uri", sayHello: name};
 
+let OPerson1 = {
+    name: 'Melissa',
+    sayHello: function() { }
+};
+
+OPerson1.sayHello = function() { console.log(`Hello! My name is ${this.name}`); }
+OPerson1.sayHello();
+
+let OPerson2 = {
+    name: 'Zach',
+    sayHello: function() { }
+};
+
+OPerson2.sayHello = function() { console.log(`Hello! My name is ${this.name}`); }
+OPerson2.sayHello();
+
+let OPerson3 = {
+    name: 'Shay',
+    sayHello: function() { }
+};
+
+OPerson3.sayHello = function() { console.log(`Hello! My name is ${this.name}`); }
+OPerson3.sayHello();
+
+let OPerson4 = {
+    name: 'Jessi',
+    sayHello: function() { }
+};
+
+OPerson4.sayHello = function() { console.log(`Hello! My name is ${this.name}`); }
+OPerson4.sayHello();
+
+let OPerson5 = {
+    name: 'Uri',
+    sayHello: function() { }
+};
+
+OPerson5.sayHello = function() { console.log(`Hello! My name is ${this.name}`); }
+OPerson5.sayHello();
 
 class Person {
     name: string;
@@ -22,7 +61,7 @@ class Person {
     }
 
     sayHello() {
-        return `${this.name} is ${this.age} years old and currently resides in ${this.city}.x`;
+        return `${this.name} is ${this.age} years old and currently resides in ${this.city}.`;
     }
 }
 
