@@ -1,7 +1,6 @@
-// interface IFriend {
-//     readonly name: string,
-//     sayHello(name): (name) => console.log(`Hello, ${name}`);
-// }
+/* Object Literals, Pseudo Classes and methods */
+// This is just me messing around with interfaces and pseudo-classes;
+//   feel free to jump down about 30 lines to the object literals
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -15,41 +14,59 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-// let friend01:IFriend = {name: "Melissa", sayHello: name};
-// let friend02:IFriend = {name: "Zach", sayHello: name};
-// let friend03:IFriend = {name: "Shay", sayHello: name};
-// let friend04:IFriend = {name: "Jessi", sayHello: name};
-// let friend05:IFriend = {name: "Uri", sayHello: name};
+var Friend = /** @class */ (function () {
+    function Friend(name) {
+        this.name = name;
+    }
+    Friend.prototype.sayHello = function () {
+        return console.log("Hello! My name is " + this.name + ", of the interface-templated class.");
+    };
+    return Friend;
+}());
+var friend01 = new Friend('Melissa');
+friend01.sayHello();
+var friend02 = new Friend('Zach');
+friend02.sayHello();
+var friend03 = new Friend('Shay');
+friend03.sayHello();
+var friend04 = new Friend('Jessi');
+friend04.sayHello();
+var friend05 = new Friend('Uri');
+friend05.sayHello();
+/* Object Literals, Pseudo Classes and methods */
+// These are written as just regular object literals (in Typescript)
 var OPerson1 = {
     name: 'Melissa',
     sayHello: function () { }
 };
-OPerson1.sayHello = function () { console.log("Hello! My name is " + this.name); };
+OPerson1.sayHello = function () { console.log("Hello! My name is " + this.name + ", as an object literal."); };
 OPerson1.sayHello();
 var OPerson2 = {
     name: 'Zach',
     sayHello: function () { }
 };
-OPerson2.sayHello = function () { console.log("Hello! My name is " + this.name); };
+OPerson2.sayHello = function () { console.log("Hello! My name is " + this.name + ", as an object literal."); };
 OPerson2.sayHello();
 var OPerson3 = {
     name: 'Shay',
     sayHello: function () { }
 };
-OPerson3.sayHello = function () { console.log("Hello! My name is " + this.name); };
+OPerson3.sayHello = function () { console.log("Hello! My name is " + this.name + ", as an object literal."); };
 OPerson3.sayHello();
 var OPerson4 = {
     name: 'Jessi',
     sayHello: function () { }
 };
-OPerson4.sayHello = function () { console.log("Hello! My name is " + this.name); };
+OPerson4.sayHello = function () { console.log("Hello! My name is " + this.name + ", as an object literal."); };
 OPerson4.sayHello();
 var OPerson5 = {
     name: 'Uri',
     sayHello: function () { }
 };
-OPerson5.sayHello = function () { console.log("Hello! My name is " + this.name); };
+OPerson5.sayHello = function () { console.log("Hello! My name is " + this.name + ", as an object literal."); };
 OPerson5.sayHello();
+/* Object Literals, Pseudo Classes and methods */
+// These are written as just pseudo-classes
 var Person = /** @class */ (function () {
     function Person(n, c, a) {
         this.name = n;
@@ -57,15 +74,21 @@ var Person = /** @class */ (function () {
         this.age = a;
     }
     Person.prototype.sayHello = function () {
-        return this.name + " is " + this.age + " years old and currently resides in " + this.city + ".";
+        console.log(this.name + " is " + this.age + " years old and currently resides in " + this.city + ".");
     };
     return Person;
 }());
-var person01 = new Person("Melissa", "Birmingham", 30);
-var person02 = new Person("Melissa", "Birmingham", 31);
-var person03 = new Person("Melissa", "Birmingham", 31);
-var person04 = new Person("Melissa", "Birmingham", 32);
-var person05 = new Person("Melissa", "Birmingham", 32);
+var person01 = new Person('Melissa', 'Birmingham', 30);
+person01.sayHello();
+var person02 = new Person('Zach', 'Birmingham', 31);
+person02.sayHello();
+var person03 = new Person('Shay', 'Birmingham', 31);
+person03.sayHello();
+var person04 = new Person('Jessi', 'Birmingham', 32);
+person04.sayHello();
+var person05 = new Person('Uri', 'Birmingham', 32);
+person05.sayHello();
+/* INHERITANCE */
 var Vehicle = /** @class */ (function () {
     function Vehicle(manufacturer, numWheels) {
         this.manufacturer = manufacturer;
@@ -147,5 +170,5 @@ var childTruck = new Truck('Ford', 4, true, true);
 childTruck.aboutVehicle();
 var childSedan = new Sedan('Nissan', 4, true, false, 'Compact', 34);
 childSedan.aboutVehicle();
-var childMotorcycle = new Motorcycle('Honda', 2, false, false, 78, false, false);
+var childMotorcycle = new Motorcycle('Honda', 2, false, false, 78, true, false);
 childMotorcycle.aboutVehicle();

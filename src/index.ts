@@ -1,20 +1,43 @@
-// interface IFriend {
-//     readonly name: string,
-//     sayHello(name): (name) => console.log(`Hello, ${name}`);
-// }
+/* Object Literals, Pseudo Classes and methods */
+// This is just me messing around with interfaces and pseudo-classes;
+//   feel free to jump down about 30 lines to the object literals
 
-// let friend01:IFriend = {name: "Melissa", sayHello: name};
-// let friend02:IFriend = {name: "Zach", sayHello: name};
-// let friend03:IFriend = {name: "Shay", sayHello: name};
-// let friend04:IFriend = {name: "Jessi", sayHello: name};
-// let friend05:IFriend = {name: "Uri", sayHello: name};
+interface IFriend {
+    readonly name: string,
+    sayHello: () => any;
+}
+
+class Friend implements IFriend {
+    name: string;
+    constructor(name: string) {
+        this.name = name;
+    }
+    sayHello() {
+        return console.log(`Hello! My name is ${this.name}, of the interface-templated class.`)
+    }
+}
+
+let friend01:IFriend = new Friend ('Melissa');
+friend01.sayHello();
+let friend02:IFriend = new Friend ('Zach');
+friend02.sayHello();
+let friend03:IFriend = new Friend ('Shay');
+friend03.sayHello();
+let friend04:IFriend = new Friend ('Jessi');
+friend04.sayHello();
+let friend05:IFriend = new Friend ('Uri');
+friend05.sayHello();
+
+
+/* Object Literals, Pseudo Classes and methods */
+// These are written as just regular object literals (in Typescript)
 
 let OPerson1 = {
     name: 'Melissa',
     sayHello: function() { }
 };
 
-OPerson1.sayHello = function() { console.log(`Hello! My name is ${this.name}`); }
+OPerson1.sayHello = function() { console.log(`Hello! My name is ${this.name}, as an object literal.`); }
 OPerson1.sayHello();
 
 let OPerson2 = {
@@ -22,7 +45,7 @@ let OPerson2 = {
     sayHello: function() { }
 };
 
-OPerson2.sayHello = function() { console.log(`Hello! My name is ${this.name}`); }
+OPerson2.sayHello = function() { console.log(`Hello! My name is ${this.name}, as an object literal.`); }
 OPerson2.sayHello();
 
 let OPerson3 = {
@@ -30,7 +53,7 @@ let OPerson3 = {
     sayHello: function() { }
 };
 
-OPerson3.sayHello = function() { console.log(`Hello! My name is ${this.name}`); }
+OPerson3.sayHello = function() { console.log(`Hello! My name is ${this.name}, as an object literal.`); }
 OPerson3.sayHello();
 
 let OPerson4 = {
@@ -38,7 +61,7 @@ let OPerson4 = {
     sayHello: function() { }
 };
 
-OPerson4.sayHello = function() { console.log(`Hello! My name is ${this.name}`); }
+OPerson4.sayHello = function() { console.log(`Hello! My name is ${this.name}, as an object literal.`); }
 OPerson4.sayHello();
 
 let OPerson5 = {
@@ -46,8 +69,12 @@ let OPerson5 = {
     sayHello: function() { }
 };
 
-OPerson5.sayHello = function() { console.log(`Hello! My name is ${this.name}`); }
+OPerson5.sayHello = function() { console.log(`Hello! My name is ${this.name}, as an object literal.`); }
 OPerson5.sayHello();
+
+
+/* Object Literals, Pseudo Classes and methods */
+// These are written as just pseudo-classes
 
 class Person {
     name: string;
@@ -61,17 +88,24 @@ class Person {
     }
 
     sayHello() {
-        return `${this.name} is ${this.age} years old and currently resides in ${this.city}.`;
+        console.log(`${this.name} is ${this.age} years old and currently resides in ${this.city}.`);
     }
 }
 
-let person01 = new Person("Melissa", "Birmingham", 30);
-let person02 = new Person("Melissa", "Birmingham", 31);
-let person03 = new Person("Melissa", "Birmingham", 31);
-let person04 = new Person("Melissa", "Birmingham", 32);
-let person05 = new Person("Melissa", "Birmingham", 32);
+let person01 = new Person('Melissa', 'Birmingham', 30);
+person01.sayHello();
+let person02 = new Person('Zach', 'Birmingham', 31);
+person02.sayHello();
+let person03 = new Person('Shay', 'Birmingham', 31);
+person03.sayHello();
+let person04 = new Person('Jessi', 'Birmingham', 32);
+person04.sayHello();
+let person05 = new Person('Uri', 'Birmingham', 32);
+person05.sayHello();
 
 
+
+/* INHERITANCE */
 
 class Vehicle {
     manufacturer: string;
@@ -165,5 +199,5 @@ childTruck.aboutVehicle();
 const childSedan = new Sedan('Nissan', 4, true, false, 'Compact', 34);
 childSedan.aboutVehicle();
 
-const childMotorcycle = new Motorcycle('Honda', 2, false, false, 78, false, false);
+const childMotorcycle = new Motorcycle('Honda', 2, false, false, 78, true, false);
 childMotorcycle.aboutVehicle();
